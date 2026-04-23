@@ -1,0 +1,377 @@
+{
+  "valor": "Amor",
+  "tipo": "tema",
+  "descripcion": "El punto de partida de toda canción verdadera",
+  "icon": "♡",
+  "hijos": [
+    {
+      "valor": "Romántico",
+      "tipo": "categoria",
+      "descripcion": "Entre dos personas, con toda su fuerza",
+      "icon": "♡",
+      "hijos": [
+        {
+          "valor": "Apasionado",
+          "tipo": "mood",
+          "descripcion": "Ardiente, desbordante, sin límite",
+          "icon": "◆",
+          "hijos": [
+            { "valor": "Tu boca, volcán que quema y da vida", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Arder en ti como la última vela del mundo", "tipo": "seed", "subtipo": "imagen" },
+            { "valor": "Quiero ser el incendio que te nombra", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "Mi corazón, tambor que solo toca tu nombre", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Tus manos hacen verano en todo lo que tocan", "tipo": "seed", "subtipo": "imagen" },
+            { "valor": "Bésame hasta que el mundo olvide su idioma", "tipo": "seed", "subtipo": "verso semilla" }
+          ]
+        },
+        {
+          "valor": "Tierno",
+          "tipo": "mood",
+          "descripcion": "Suave, delicado, cotidiano",
+          "icon": "◇",
+          "hijos": [
+            { "valor": "Eres la mañana que no quiero despertar", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "Te cuido como el agua cuida al pez", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "En tus manos aprendí que el cielo tiene peso", "tipo": "seed", "subtipo": "imagen" },
+            { "valor": "Amor que llega suave como luz entre persianas", "tipo": "seed", "subtipo": "imagen" },
+            { "valor": "Contigo hasta el silencio se sienta a descansar", "tipo": "seed", "subtipo": "frase" },
+            { "valor": "Eres hogar en la parte más pequeña del día", "tipo": "seed", "subtipo": "metáfora" }
+          ]
+        },
+        {
+          "valor": "Tormentoso",
+          "tipo": "mood",
+          "descripcion": "Contradictorio, que duele y da",
+          "icon": "◈",
+          "hijos": [
+            { "valor": "Te amo y me destruyes con la misma mano", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "La tormenta que llevo dentro tiene tu rostro", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Entre el trueno y el rayo, te busco", "tipo": "seed", "subtipo": "imagen" },
+            { "valor": "Amor que duele exactamente como la verdad", "tipo": "seed", "subtipo": "frase" },
+            { "valor": "Nos quisimos como se rompen los relámpagos", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Eras refugio y herida al mismo tiempo", "tipo": "seed", "subtipo": "paradoja" }
+          ]
+        },
+        {
+          "valor": "Juguetón",
+          "tipo": "mood",
+          "descripcion": "Ligero, cómplice, encantador",
+          "icon": "✦",
+          "hijos": [
+            { "valor": "Te ríes y todo tropieza hacia la belleza", "tipo": "seed", "subtipo": "imagen" },
+            { "valor": "Coqueteas como quien enciende una ciudad", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Me gustas con esa calma que finge no saber", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "Tu risa tiene la culpa de mis mejores incendios", "tipo": "seed", "subtipo": "frase" }
+          ]
+        },
+        {
+          "valor": "Devoto",
+          "tipo": "mood",
+          "descripcion": "Entregado, reverente, absoluto",
+          "icon": "✧",
+          "hijos": [
+            { "valor": "Te miro como se mira algo que salva", "tipo": "seed", "subtipo": "imagen" },
+            { "valor": "Mi manera de rezar aprendió tu nombre", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Amarte es mi oficio más secreto", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "Hay personas que llegan y vuelven sagrado el aire", "tipo": "seed", "subtipo": "frase" }
+          ]
+        }
+      ]
+    },
+    {
+      "valor": "Platónico",
+      "tipo": "categoria",
+      "descripcion": "Desde la distancia, sin posesión",
+      "icon": "◯",
+      "hijos": [
+        {
+          "valor": "Sereno",
+          "tipo": "mood",
+          "descripcion": "Tranquilo, sin necesitar respuesta",
+          "icon": "◌",
+          "hijos": [
+            { "valor": "Te quiero desde lejos como se quiere al mar", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Mi amor por ti no necesita respuesta para existir", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "Eres la canción que escucho sin haberla pedido", "tipo": "seed", "subtipo": "imagen" },
+            { "valor": "Amor silencioso que no pesa y no sangra", "tipo": "seed", "subtipo": "frase" },
+            { "valor": "Te pienso sin pedirle permiso al destino", "tipo": "seed", "subtipo": "verso semilla" }
+          ]
+        },
+        {
+          "valor": "Añorante",
+          "tipo": "mood",
+          "descripcion": "Lo que nunca fue y se extraña",
+          "icon": "◎",
+          "hijos": [
+            { "valor": "Extraño lo que nunca tuve contigo", "tipo": "seed", "subtipo": "paradoja" },
+            { "valor": "¿Cómo se extraña lo que no se llegó a tocar?", "tipo": "seed", "subtipo": "pregunta lírica" },
+            { "valor": "Te llevo como sombra que no existe", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Amor que vive en el subjuntivo", "tipo": "seed", "subtipo": "frase" },
+            { "valor": "Te perdí en una historia que nunca empezó", "tipo": "seed", "subtipo": "verso semilla" }
+          ]
+        },
+        {
+          "valor": "Puro",
+          "tipo": "mood",
+          "descripcion": "Sin pedir nada, que solo florece",
+          "icon": "◉",
+          "hijos": [
+            { "valor": "Sin tocarte, te conozco mejor que a mí mismo", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "Te quiero sin pedirte nada a cambio", "tipo": "seed", "subtipo": "declaración" },
+            { "valor": "Eres mío sin serlo, ese es el milagro", "tipo": "seed", "subtipo": "paradoja" },
+            { "valor": "Amor que no contamina, que solo florece afuera", "tipo": "seed", "subtipo": "imagen" },
+            { "valor": "Mi ternura por ti no necesita destino", "tipo": "seed", "subtipo": "frase" }
+          ]
+        },
+        {
+          "valor": "Idealizado",
+          "tipo": "mood",
+          "descripcion": "Luminoso, casi imaginado",
+          "icon": "☼",
+          "hijos": [
+            { "valor": "Te inventé tan bello que la realidad te quedó pequeña", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "A veces te amo más en la idea que en el mundo", "tipo": "seed", "subtipo": "paradoja" },
+            { "valor": "Eres estatua de luz en mi pensamiento", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Hay amores que nacen en la imaginación y aun así respiran", "tipo": "seed", "subtipo": "frase" }
+          ]
+        }
+      ]
+    },
+    {
+      "valor": "Propio",
+      "tipo": "categoria",
+      "descripcion": "Amor hacia uno mismo, interior",
+      "icon": "▽",
+      "hijos": [
+        {
+          "valor": "Sanador",
+          "tipo": "mood",
+          "descripcion": "Que cura, reconcilia y abraza",
+          "icon": "▸",
+          "hijos": [
+            { "valor": "Aprendí a mirarme sin juzgarme primero", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "Soy el amor que más tiempo me costó encontrar", "tipo": "seed", "subtipo": "declaración" },
+            { "valor": "Curarme es también una forma de querer", "tipo": "seed", "subtipo": "frase" },
+            { "valor": "Me elijo hoy aunque ayer me olvidé", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "Abrazarme también fue volver a casa", "tipo": "seed", "subtipo": "metáfora" }
+          ]
+        },
+        {
+          "valor": "Desafiante",
+          "tipo": "mood",
+          "descripcion": "Que se afirma y no cede",
+          "icon": "▹",
+          "hijos": [
+            { "valor": "Soy la tormenta y también el refugio", "tipo": "seed", "subtipo": "paradoja" },
+            { "valor": "Nadie puede darme lo que yo ya tengo", "tipo": "seed", "subtipo": "declaración" },
+            { "valor": "Me quiero con la misma fuerza con que dudé", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "Soy frontera, soy centro, soy mi propio norte", "tipo": "seed", "subtipo": "imagen" },
+            { "valor": "No me abandono otra vez ni por amor", "tipo": "seed", "subtipo": "frase" }
+          ]
+        },
+        {
+          "valor": "Floreciente",
+          "tipo": "mood",
+          "descripcion": "Creciendo, expansivo, vivo",
+          "icon": "▿",
+          "hijos": [
+            { "valor": "Florecer hacia dentro también es una hazaña", "tipo": "seed", "subtipo": "frase" },
+            { "valor": "Soy semilla y tierra al mismo tiempo", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Me crecí cuando nadie me miraba", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "El jardín que yo riego se llama amor propio", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Estoy aprendiendo a abrirme como las plantas al sol", "tipo": "seed", "subtipo": "imagen" }
+          ]
+        },
+        {
+          "valor": "Sereno",
+          "tipo": "mood",
+          "descripcion": "En paz, estable, reconciliado",
+          "icon": "▹",
+          "hijos": [
+            { "valor": "Ya no peleo conmigo para sentirme digno", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "Mi paz dejó de pedirme permiso", "tipo": "seed", "subtipo": "frase" },
+            { "valor": "Vivir en mí ya no se siente como guerra", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Hay una calma nueva pronunciando mi nombre", "tipo": "seed", "subtipo": "imagen" }
+          ]
+        }
+      ]
+    },
+    {
+      "valor": "Perdido",
+      "tipo": "categoria",
+      "descripcion": "El que se fue, la ausencia",
+      "icon": "◁",
+      "hijos": [
+        {
+          "valor": "Melancólico",
+          "tipo": "mood",
+          "descripcion": "Que pesa, que dura, que duele",
+          "icon": "◂",
+          "hijos": [
+            { "valor": "Lo que fuimos duerme entre mis dedos cerrados", "tipo": "seed", "subtipo": "imagen" },
+            { "valor": "Te busco en canciones que ya no recuerdo", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "El silencio donde estabas tiene exactamente tu forma", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Me duele el amor que ya no existe", "tipo": "seed", "subtipo": "declaración" },
+            { "valor": "Tu ausencia aprendió a vivir en mis hábitos", "tipo": "seed", "subtipo": "frase" }
+          ]
+        },
+        {
+          "valor": "Nostálgico",
+          "tipo": "mood",
+          "descripcion": "Con cariño al pasado",
+          "icon": "◃",
+          "hijos": [
+            { "valor": "Recuerdo tu olor como si fuera primera vez", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "Guardé lo nuestro en una caja sin llave", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "A veces el pasado tiene más vida que hoy", "tipo": "seed", "subtipo": "frase" },
+            { "valor": "Te extraño con la memoria, no con el corazón", "tipo": "seed", "subtipo": "imagen" },
+            { "valor": "Todavía sé volver a ti por caminos que ya no existen", "tipo": "seed", "subtipo": "verso semilla" }
+          ]
+        },
+        {
+          "valor": "Liberador",
+          "tipo": "mood",
+          "descripcion": "La pérdida como apertura",
+          "icon": "◄",
+          "hijos": [
+            { "valor": "Soltarte fue encontrarme de nuevo entero", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "Perderte fue la puerta que no vi antes", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Sin ti aprendí que el aire también sostiene", "tipo": "seed", "subtipo": "imagen" },
+            { "valor": "Un adiós que dolió pero abrió todas las ventanas", "tipo": "seed", "subtipo": "frase" },
+            { "valor": "La herida también fue un mapa de salida", "tipo": "seed", "subtipo": "metáfora" }
+          ]
+        },
+        {
+          "valor": "Irresuelto",
+          "tipo": "mood",
+          "descripcion": "Sin cierre, con preguntas abiertas",
+          "icon": "◅",
+          "hijos": [
+            { "valor": "No sé si te fuiste o todavía estás en ruinas dentro de mí", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "Quedaron puertas hablando solas en nuestra casa vacía", "tipo": "seed", "subtipo": "imagen" },
+            { "valor": "Lo nuestro terminó sin aprender a decirlo", "tipo": "seed", "subtipo": "frase" },
+            { "valor": "Hay despedidas que se quedan a vivir sin nombre", "tipo": "seed", "subtipo": "metáfora" }
+          ]
+        }
+      ]
+    },
+    {
+      "valor": "Prohibido",
+      "tipo": "categoria",
+      "descripcion": "El que no puede ser, oculto",
+      "icon": "✕",
+      "hijos": [
+        {
+          "valor": "Ardiente",
+          "tipo": "mood",
+          "descripcion": "Más fuerte porque no puede",
+          "icon": "◣",
+          "hijos": [
+            { "valor": "Te quiero en secreto pero con todo el fuego", "tipo": "seed", "subtipo": "declaración" },
+            { "valor": "Arde más lo prohibido porque no puede ser", "tipo": "seed", "subtipo": "frase" },
+            { "valor": "Lo prohibido tiene sabor a infinito", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Te deseo más cuando menos puedo decirlo", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "Lo nuestro vive donde el miedo besa al deseo", "tipo": "seed", "subtipo": "imagen" }
+          ]
+        },
+        {
+          "valor": "Oscuro",
+          "tipo": "mood",
+          "descripcion": "Escondido, en la sombra",
+          "icon": "◤",
+          "hijos": [
+            { "valor": "Nuestro amor vive donde no llega ninguna luz", "tipo": "seed", "subtipo": "imagen" },
+            { "valor": "Somos sombra que busca sombra para existir", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Amor que no tiene nombre pero tiene forma propia", "tipo": "seed", "subtipo": "frase" },
+            { "valor": "Lo que escondemos también nos pertenece", "tipo": "seed", "subtipo": "declaración" },
+            { "valor": "Nos amamos como si el mundo oyera detrás de la puerta", "tipo": "seed", "subtipo": "verso semilla" }
+          ]
+        },
+        {
+          "valor": "Culpable",
+          "tipo": "mood",
+          "descripcion": "Que pesa pero persiste",
+          "icon": "◥",
+          "hijos": [
+            { "valor": "Me pesa quererte y no puedo parar de hacerlo", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "Amor que duele más cuando es completamente real", "tipo": "seed", "subtipo": "frase" },
+            { "valor": "¿Cómo pedir perdón por algo que no elegí sentir?", "tipo": "seed", "subtipo": "pregunta lírica" },
+            { "valor": "Cargo el peso de amarte como si fuera una cruz", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "La conciencia no pudo apagar lo que sentía la piel", "tipo": "seed", "subtipo": "imagen" }
+          ]
+        },
+        {
+          "valor": "Fatal",
+          "tipo": "mood",
+          "descripcion": "Inevitable, condenado desde el inicio",
+          "icon": "◧",
+          "hijos": [
+            { "valor": "Desde el primer beso supimos que esto iba a doler", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "Nos elegimos justo donde todo estaba perdido", "tipo": "seed", "subtipo": "frase" },
+            { "valor": "Éramos destino disfrazado de error", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Hay amores que nacen con la despedida adentro", "tipo": "seed", "subtipo": "imagen" }
+          ]
+        }
+      ]
+    },
+    {
+      "valor": "Eterno",
+      "tipo": "categoria",
+      "descripcion": "Sin tiempo, que siempre fue y será",
+      "icon": "∞",
+      "hijos": [
+        {
+          "valor": "Sagrado",
+          "tipo": "mood",
+          "descripcion": "Con reverencia, casi ritual",
+          "icon": "△",
+          "hijos": [
+            { "valor": "Te amo con una fe que no necesita templo", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Lo nuestro es un ritual más antiguo que el tiempo", "tipo": "seed", "subtipo": "imagen" },
+            { "valor": "Amor que no muere, que solo cambia de forma", "tipo": "seed", "subtipo": "frase" },
+            { "valor": "En cada vida que viva te vuelvo a buscar", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "Tu nombre tiene algo de oración antigua", "tipo": "seed", "subtipo": "metáfora" }
+          ]
+        },
+        {
+          "valor": "Profundo",
+          "tipo": "mood",
+          "descripcion": "Hondo, raíz invisible",
+          "icon": "▽",
+          "hijos": [
+            { "valor": "Raíces que nadie ve pero que todo lo sostienen", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Te quiero con las capas que nadie más conoce", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "Amor que no grita pero siempre está debajo", "tipo": "seed", "subtipo": "imagen" },
+            { "valor": "Hondo como el agua que duerme bajo la tierra", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Lo nuestro no se ve, pero sostiene mis días", "tipo": "seed", "subtipo": "frase" }
+          ]
+        },
+        {
+          "valor": "Infinito",
+          "tipo": "mood",
+          "descripcion": "Sin orilla, sin final posible",
+          "icon": "○",
+          "hijos": [
+            { "valor": "No hay final en el lugar donde yo te quiero", "tipo": "seed", "subtipo": "declaración" },
+            { "valor": "Mi amor por ti no tiene orilla ni nombre", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "Te amaré más allá del último nombre que tenga", "tipo": "seed", "subtipo": "imagen" },
+            { "valor": "Somos el punto exacto donde el tiempo se rinde", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Lo eterno empezó en algo tan simple como mirarte", "tipo": "seed", "subtipo": "frase" }
+          ]
+        },
+        {
+          "valor": "Reencuentro",
+          "tipo": "mood",
+          "descripcion": "Como si el amor volviera de otras vidas",
+          "icon": "◍",
+          "hijos": [
+            { "valor": "Cuando te vi, mi alma recordó antes que mis ojos", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "Traías en la mirada una memoria que no era de esta vida", "tipo": "seed", "subtipo": "imagen" },
+            { "valor": "Hay personas que no llegan: regresan", "tipo": "seed", "subtipo": "frase" },
+            { "valor": "Te reconocí como se reconoce una casa perdida", "tipo": "seed", "subtipo": "metáfora" }
+          ]
+        }
+      ]
+    }
+  ]
+}
