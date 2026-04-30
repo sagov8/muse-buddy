@@ -1,7 +1,89 @@
-# JetBrains IDE files
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+ENV/
+
+# Variables de entorno
+.env
+.env.*
+!.env.example
+
+# Paquetes / builds
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Logs
+*.log
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Type checkers / linters
+.mypy_cache/
+.pyre/
+.ruff_cache/
+.dmypy.json
+dmypy.json
+
+# =========================
+# PyCharm / JetBrains
+# =========================
 .idea/
 *.iml
-*.ipr
-*.iws
-out/
+
+# =========================
+# Flet
+# =========================
+.flet/
+flet-build/
+web-build/
+flutter-build/
+
+# Archivos generados al empaquetar apps
+*.spec
+
+# =========================
+# Windows
+# =========================
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# =========================
+# macOS / Linux por si se comparte el repo
+# =========================
+.DS_Store
+
+# =========================
+# SQLite / bases locales
+# =========================
+*.sqlite
+*.sqlite3
+*.db
+
+# =========================
+# Archivos temporales
+# =========================
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
 

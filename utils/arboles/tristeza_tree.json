@@ -1,0 +1,110 @@
+{
+  "valor": "Tristeza",
+  "tipo": "tema",
+  "descripcion": "El peso emocional de lo perdido, lo ausente o lo que aún duele",
+  "icon": "☔",
+  "hijos": [
+    {
+      "valor": "Pérdida",
+      "tipo": "categoria",
+      "descripcion": "Cuando algo o alguien ya no está",
+      "icon": "◐",
+      "hijos": [
+        {
+          "valor": "Duelo",
+          "tipo": "mood",
+          "descripcion": "Dolor profundo, lento, inevitable",
+          "icon": "◆",
+          "hijos": [
+            { "valor": "Tu ausencia ocupa más espacio que tu cuerpo", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Hay sillas vacías que gritan más que una multitud", "tipo": "seed", "subtipo": "imagen" },
+            { "valor": "Te fuiste y el mundo siguió, qué falta de respeto", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "Lloro como quien riega una tumba por dentro", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Desde que no estás, hasta la luz entra de luto", "tipo": "seed", "subtipo": "imagen" }
+          ]
+        },
+        {
+          "valor": "Nostálgico",
+          "tipo": "mood",
+          "descripcion": "Tristeza dulce por lo que fue",
+          "icon": "◇",
+          "hijos": [
+            { "valor": "Extraño la versión de mí que existía contigo", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "El pasado huele a casa cerrada", "tipo": "seed", "subtipo": "imagen" },
+            { "valor": "Hay recuerdos que vuelven descalzos para no hacer ruido", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Fuimos felices y eso también duele", "tipo": "seed", "subtipo": "paradoja" },
+            { "valor": "La memoria guarda flores secas en la garganta", "tipo": "seed", "subtipo": "metáfora" }
+          ]
+        }
+      ]
+    },
+    {
+      "valor": "Soledad",
+      "tipo": "categoria",
+      "descripcion": "Tristeza de sentirse lejos de todo",
+      "icon": "◯",
+      "hijos": [
+        {
+          "valor": "Vacío",
+          "tipo": "mood",
+          "descripcion": "Hueco, apagado, sin centro",
+          "icon": "◌",
+          "hijos": [
+            { "valor": "Tengo un cuarto oscuro donde antes vivía mi pecho", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Nada me falta, pero nada me alcanza", "tipo": "seed", "subtipo": "paradoja" },
+            { "valor": "Mi corazón suena como una casa sin muebles", "tipo": "seed", "subtipo": "imagen" },
+            { "valor": "Estoy lleno de cosas que no me salvan", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "Hay días en que existir pesa más que vivir", "tipo": "seed", "subtipo": "frase" }
+          ]
+        },
+        {
+          "valor": "Aislado",
+          "tipo": "mood",
+          "descripcion": "Lejos, incomprendido, invisible",
+          "icon": "◎",
+          "hijos": [
+            { "valor": "Grito por dentro y nadie mira hacia mi silencio", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "Soy una ventana encendida en una ciudad que no pregunta", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Me rodea gente y aun así no llego a nadie", "tipo": "seed", "subtipo": "paradoja" },
+            { "valor": "La soledad también aprende a sentarse conmigo", "tipo": "seed", "subtipo": "personificación" },
+            { "valor": "Nadie nota cuando me apago despacio", "tipo": "seed", "subtipo": "frase" }
+          ]
+        }
+      ]
+    },
+    {
+      "valor": "Desamor",
+      "tipo": "categoria",
+      "descripcion": "Tristeza nacida de amar y perder",
+      "icon": "♡",
+      "hijos": [
+        {
+          "valor": "Roto",
+          "tipo": "mood",
+          "descripcion": "Herido, quebrado, vulnerable",
+          "icon": "◈",
+          "hijos": [
+            { "valor": "Me rompiste en partes que todavía pronuncian tu nombre", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "El amor se fue, pero dejó los vidrios", "tipo": "seed", "subtipo": "metáfora" },
+            { "valor": "Tus adioses siguen caminando por mi casa", "tipo": "seed", "subtipo": "personificación" },
+            { "valor": "Duele más lo que imaginé que lo que pasó", "tipo": "seed", "subtipo": "frase" },
+            { "valor": "Fui hogar para alguien que solo estaba de paso", "tipo": "seed", "subtipo": "metáfora" }
+          ]
+        },
+        {
+          "valor": "Resignado",
+          "tipo": "mood",
+          "descripcion": "Aceptar con dolor lo inevitable",
+          "icon": "◍",
+          "hijos": [
+            { "valor": "Te solté, pero mis manos no lo saben", "tipo": "seed", "subtipo": "verso semilla" },
+            { "valor": "Hay finales que se firman llorando", "tipo": "seed", "subtipo": "frase" },
+            { "valor": "Aprendí que amar también puede ser dejar de insistir", "tipo": "seed", "subtipo": "reflexión" },
+            { "valor": "Me fui de ti para volver a mí", "tipo": "seed", "subtipo": "paradoja" },
+            { "valor": "El adiós cayó suave, pero rompió todo", "tipo": "seed", "subtipo": "imagen" }
+          ]
+        }
+      ]
+    }
+  ]
+}

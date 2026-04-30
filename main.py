@@ -17,7 +17,7 @@ from ui.views.leaf_view import build_leaf_view
 
 
 def main(page: ft.Page):
-    page.title = "Árbol del Amor"
+    page.title = "Muse Buddy"
     page.theme_mode = ft.ThemeMode.LIGHT
     page.padding = 20
     page.window_width = 1000
