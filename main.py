@@ -1,8 +1,8 @@
 import flet as ft
 import asyncio
 
-from data_loader import cargar_datos
-from ai_service import (
+from utils.data_loader import cargar_datos
+from services.ai_service import (
     generar_texto,
     generar_prompt_creativo,
     prompt_mejorar_letra,
