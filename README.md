@@ -30,6 +30,7 @@ Desde la frase semilla seleccionada puedes:
 ## Estructura del proyecto
 
 
+```
 muse-buddy/
 ├── main.py                        # Entrada principal de la app (Flet)
 ├── models/
@@ -50,6 +51,7 @@ muse-buddy/
     └── arboles/
         ├── amor_tree.json         # Árbol de emociones: Amor
         └── tristeza_tree.json     # Árbol de emociones: Tristeza
+```
 
 
 ---
@@ -60,7 +62,7 @@ Basta con crear un nuevo archivo JSON en utils/arboles/ siguiendo la misma estru
 
 Estructura básica:
 
-json
+```json
 {
   "valor": "Alegría",
   "tipo": "tema",
@@ -86,7 +88,7 @@ json
     }
   ]
 }
-
+```
 
 ---
 
@@ -94,9 +96,15 @@ json
 
 - Python 3.10+
 - [Flet](https://flet.dev/) — pip install flet
-- Acceso a la API de IA configurada en services/ai_service.py
+- Ollama o cualquier API de IA compatible (configurada en services/ai_service.py)
+- Instalar dependencias del proyecto (si usas un entorno virtual, actívalo primero):
+
+```bash
+pip install -r requirements.txt
+```
 
 ## Ejecutar
 
-bash
-python main.py
+```bash
+uv run flet run
+```
