@@ -1,4 +1,4 @@
-# 🎵 Muse Buddy
+# Muse Buddy
 
 *Herramienta de apoyo creativo para compositores.*  
 Guía al usuario desde una emoción hasta una frase semilla, y usa IA para generar versos, coros y títulos que sirvan de punto de partida para una canción.
