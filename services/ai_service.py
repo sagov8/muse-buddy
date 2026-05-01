@@ -18,10 +18,15 @@ def generar_texto(prompt: str) -> str:
             prompt=prompt,
             stream=False,
             options={
+                # Controla la creatividad: más alto = respuestas más variadas/arriesgadas.
                 "temperature": 1.05,
+                # Núcleo probabilístico: limita tokens al porcentaje acumulado más probable.
                 "top_p": 0.95,
+                # Limita la selección a los K tokens más probables en cada paso.
                 "top_k": 60,
+                # Penaliza repeticiones para reducir frases reiterativas.
                 "repeat_penalty": 1.15,
+                # Máximo de tokens generados en la respuesta.
                 "num_predict": 900,
             },
         )

@@ -1,7 +1,7 @@
 import flet as ft
 import asyncio
 
-from utils.data_loader import cargar_datos
+from utils.data_loader import cargar_datos, listar_arboles
 from services.ai_service import (
     generar_texto,
     generar_prompt_creativo,
@@ -12,6 +12,7 @@ from models.app_state import AppState
 from services.clipboard_service import copiar_texto
 from ui.components.header import build_header
 from ui.components.breadcrumb import build_breadcrumb
+from ui.views.emotion_view import build_emotion_view
 from ui.views.node_view import build_node_view
 from ui.views.leaf_view import build_leaf_view
 
@@ -25,13 +26,20 @@ def main(page: ft.Page):
     page.scroll = ft.ScrollMode.AUTO
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
+    # Cargar lista de emociones disponibles desde utils/arboles/
     try:
-        tree = cargar_datos()
+        arboles_disponibles = listar_arboles()
     except Exception as e:
-        page.add(ft.Text(f"Error cargando datos: {e}", color=ft.Colors.RED))
+        page.add(ft.Text(f"Error listando árboles: {e}", color=ft.Colors.RED))
         return
 
-    state = AppState(tree)
+    if not arboles_disponibles:
+        page.add(ft.Text("No se encontraron árboles en utils/arboles/", color=ft.Colors.RED))
+        return
+
+    # Estado de emoción seleccionada (None = pantalla de selección)
+    emocion_seleccionada = {"valor": None}  # dict para mutabilidad en closures
+    state = {"obj": None}  # AppState se crea al elegir emoción
 
     content = ft.Column(spacing=16, expand=True)
 
@@ -55,7 +63,6 @@ def main(page: ft.Page):
 
     loading_ring = ft.ProgressRing(visible=False, width=28, height=28, stroke_width=3)
     status_text = ft.Text("", color=ft.Colors.BLUE_700, italic=True)
-
     result_title = ft.Text("Salida creativa", size=18, weight=ft.FontWeight.BOLD)
 
     style_dropdown = ft.Dropdown(
@@ -72,26 +79,70 @@ def main(page: ft.Page):
     )
 
     def limpiar_resultado_ia():
-        state.ai_result = ""
+        if state["obj"]:
+            state["obj"].ai_result = ""
         ai_output.value = ""
         result_title.value = "Salida creativa"
 
+    def build_page_header():
+        """Header dinámico: muestra 'Muse Buddy' en selección, o el nombre de la emoción en navegación."""
+        if emocion_seleccionada["valor"] is None:
+            return ft.Column(
+                horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                controls=[
+                    ft.Text("Herramienta para compositores", size=12, color=ft.Colors.GREY_600),
+                    ft.Text("Muse Buddy", size=32, weight=ft.FontWeight.BOLD),
+                ],
+            )
+        else:
+            tree = state["obj"].root
+            return build_header(tree)
+
     def render():
-        breadcrumb = build_breadcrumb(state.path, on_click_path=ir_a_path_index)
         content.controls.clear()
 
-        if state.is_leaf():
+        # ── Pantalla 1: selección de emoción ──
+        if emocion_seleccionada["valor"] is None:
+            content.controls.append(
+                build_emotion_view(
+                    arboles=arboles_disponibles,
+                    on_select_emotion=seleccionar_emocion,
+                )
+            )
+            page.controls.clear()
+            page.add(
+                ft.Container(
+                    content=ft.Column(
+                        controls=[
+                            build_page_header(),
+                            ft.Divider(),
+                            content,
+                        ],
+                        spacing=20,
+                        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                    ),
+                    width=900,
+                )
+            )
+            page.update()
+            return
+
+        # ── Pantallas 2+: navegación dentro del árbol ──
+        s = state["obj"]
+        breadcrumb = build_breadcrumb(s.path, on_click_path=ir_a_path_index)
+
+        if s.is_leaf():
             content.controls.append(
                 build_leaf_view(
-                    current_node=state.current_node,
-                    path=state.path,
+                    current_node=s.current_node,
+                    path=s.path,
                     style_dropdown=style_dropdown,
                     ai_output=ai_output,
                     lyrics_editor=lyrics_editor,
                     loading_ring=loading_ring,
                     result_title=result_title,
                     status_text=status_text,
-                    is_generating=state.is_generating,
+                    is_generating=s.is_generating,
                     on_copy_seed=copy_seed,
                     on_generate_ai=generar_con_ia,
                     on_replace_editor=reemplazar_editor_con_resultado,
@@ -105,20 +156,25 @@ def main(page: ft.Page):
         else:
             content.controls.append(
                 build_node_view(
-                    current_node=state.current_node,
+                    current_node=s.current_node,
                     on_select_node=ir_a_nodo,
                 )
             )
 
-        if len(state.path) > 1:
+        # Botón volver: si estamos en la raíz del árbol, vuelve a selección de emoción
+        if len(s.path) > 1:
             content.controls.append(ft.TextButton("← Volver", on_click=volver_atras))
+        else:
+            content.controls.append(
+                ft.TextButton("← Cambiar emoción", on_click=volver_a_emociones)
+            )
 
         page.controls.clear()
         page.add(
             ft.Container(
                 content=ft.Column(
                     controls=[
-                        build_header(tree),
+                        build_page_header(),
                         ft.Divider(),
                         breadcrumb,
                         content,
@@ -131,18 +187,42 @@ def main(page: ft.Page):
         )
         page.update()
 
+    # ── Handlers ──
+
+    def seleccionar_emocion(arbol: dict):
+        """Carga el árbol de la emoción elegida e inicia la navegación."""
+        try:
+            tree = cargar_datos(arbol["archivo"])
+        except Exception as e:
+            page.snack_bar = ft.SnackBar(ft.Text(f"Error cargando árbol: {e}"))
+            page.snack_bar.open = True
+            page.update()
+            return
+
+        emocion_seleccionada["valor"] = arbol["valor"]
+        state["obj"] = AppState(tree)
+        limpiar_resultado_ia()
+        render()
+
+    def volver_a_emociones(e=None):
+        emocion_seleccionada["valor"] = None
+        state["obj"] = None
+        limpiar_resultado_ia()
+        lyrics_editor.value = ""
+        render()
+
     def ir_a_nodo(nodo: dict):
-        state.go_to_node(nodo)
+        state["obj"].go_to_node(nodo)
         limpiar_resultado_ia()
         render()
 
     def volver_atras(e=None):
-        state.go_back()
+        state["obj"].go_back()
         limpiar_resultado_ia()
         render()
 
     def ir_a_path_index(index: int):
-        state.go_to_path_index(index)
+        state["obj"].go_to_path_index(index)
         limpiar_resultado_ia()
         render()
 
@@ -153,7 +233,7 @@ def main(page: ft.Page):
         copiar_texto(page, lyrics_editor.value or "", "Letra copiada al portapapeles")
 
     async def ejecutar_ia(modo: str, seed_text: str, estilo: str = "poético"):
-        tema, categoria, mood = state.get_context()
+        tema, categoria, mood = state["obj"].get_context()
 
         prompt = generar_prompt_creativo(
             modo=modo,
@@ -177,7 +257,7 @@ def main(page: ft.Page):
         finalizar_carga(respuesta)
 
     def generar_con_ia(modo: str, seed_text: str, estilo: str = "poético"):
-        if state.is_generating:
+        if state["obj"].is_generating:
             return
         page.run_task(ejecutar_ia, modo, seed_text, estilo)
 
@@ -190,7 +270,6 @@ def main(page: ft.Page):
         if ai_output.value and ai_output.value.strip():
             texto_actual = lyrics_editor.value.strip() if lyrics_editor.value else ""
             nuevo_bloque = ai_output.value.strip()
-
             lyrics_editor.value = (
                 f"{texto_actual}\n\n{nuevo_bloque}" if texto_actual else nuevo_bloque
             )
@@ -208,13 +287,10 @@ def main(page: ft.Page):
             page.update()
             return
 
-        tema, categoria, mood = state.get_context()
+        tema, categoria, mood = state["obj"].get_context()
         prompt = prompt_mejorar_letra(letra_actual, tema, categoria, mood)
 
-        iniciar_carga(
-            mensaje="Mejorando letra con IA...",
-            titulo="Salida IA: Letra mejorada",
-        )
+        iniciar_carga(mensaje="Mejorando letra con IA...", titulo="Salida IA: Letra mejorada")
 
         try:
             respuesta = await asyncio.to_thread(generar_texto, prompt)
@@ -224,7 +300,7 @@ def main(page: ft.Page):
         finalizar_carga(respuesta)
 
     def mejorar_letra_con_ia(e=None):
-        if state.is_generating:
+        if state["obj"].is_generating:
             return
         page.run_task(ejecutar_mejora_letra)
 
@@ -236,13 +312,10 @@ def main(page: ft.Page):
             page.update()
             return
 
-        tema, categoria, mood = state.get_context()
+        tema, categoria, mood = state["obj"].get_context()
         prompt = prompt_continuar_letra(letra_actual, tema, categoria, mood)
 
-        iniciar_carga(
-            mensaje="Generando continuación...",
-            titulo="Salida IA: Continuación",
-        )
+        iniciar_carga(mensaje="Generando continuación...", titulo="Salida IA: Continuación")
 
         try:
             respuesta = await asyncio.to_thread(generar_texto, prompt)
@@ -252,26 +325,28 @@ def main(page: ft.Page):
         finalizar_carga(respuesta)
 
     def continuar_letra_con_ia(e=None):
-        if state.is_generating:
+        if state["obj"].is_generating:
             return
         page.run_task(ejecutar_continuacion_letra)
 
     def iniciar_carga(mensaje: str, titulo: str):
-        state.is_generating = True
+        s = state["obj"]
+        s.is_generating = True
         loading_ring.visible = True
         status_text.value = "Procesando..."
         result_title.value = titulo
         ai_output.value = mensaje
-        style_dropdown.disabled = state.is_generating
+        style_dropdown.disabled = True
         page.update()
 
     def finalizar_carga(respuesta: str):
-        state.is_generating = False
+        s = state["obj"]
+        s.is_generating = False
         loading_ring.visible = False
         status_text.value = "Listo"
-        state.ai_result = respuesta
+        s.ai_result = respuesta
         ai_output.value = respuesta
-        style_dropdown.disabled = state.is_generating
+        style_dropdown.disabled = False
         page.update()
 
     render()
