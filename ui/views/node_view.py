@@ -30,7 +30,7 @@ def build_node_view(current_node: dict, on_select_node) -> ft.Control:
                         ft.Text(
                             subtipo.upper(),
                             size=10,
-                            color=ft.Colors.PURPLE_400,
+                            color=ft.Colors.WHITE70,
                         ) if subtipo else ft.Container(height=0),
                     ],
                     spacing=6,

@@ -15,6 +15,7 @@ def build_breadcrumb(path: list[dict], on_click_path) -> ft.Row:
                 ft.Text(
                     nodo.get("valor", "Nodo"),
                     weight=ft.FontWeight.BOLD,
+                    color=ft.Colors.WHITE,
                 )
             )
         else:

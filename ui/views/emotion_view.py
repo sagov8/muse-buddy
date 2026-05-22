@@ -51,7 +51,7 @@ def build_emotion_view(arboles: list, on_select_emotion) -> ft.Control:
                 size=22,
                 italic=True,
                 text_align=ft.TextAlign.CENTER,
-                color=ft.Colors.INDIGO_800,
+                color=ft.Colors.GREY_300,
             ),
             ft.Container(height=8),
             ft.ResponsiveRow(
